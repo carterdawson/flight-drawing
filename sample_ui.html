@@ -1,7 +1,6 @@
 <html>
     <head>
         <title>Fly Writing Route Generator</title>
-        <script type="module" src="./dist/index.js"></script>
 
         <script type="module">
             import {Waypoint, FlightDrawing} from './dist/index.js';
@@ -44,22 +43,25 @@
         </script>
     </head>
     <body>
-        <h2>Starting Location</h2>
-        <p>Lattitude numbers are positive for E, negative for W.  Example: -115.1 is 115.1W</p>
-        <label for="lat">Lat:</label>
-        <input type="text" id="lat" name="lat" value="33.645"/>
-        <label for="lon">Lon:</label>
-        <input type="text" id="lon" name="lon" value="-115.554"/><br/>
-        <label for="points">Points:</label><br/>
-        <textarea rows="10" cols="80" id="points" name="points"></textarea><br/>
+        <h3>Starting Location</h3>
+        <p>Lattitude numbers are positive for E, negative for W. Example: 115.1W is -115.1.</p>
+        <label for="lat">Lat:</label> <input type="text" id="lat" name="lat" value="32.91"> 
+        <label for="lon">Lon:</label> <input type="text" id="lon" name="lon" value="-116.5"><br> 
+        <h3>Route points</h3>
+        <p>Use the default NFlight Logo, or delete those route points and paste your own. </p>
+        <label for="points">Points:</label><br/> 
+        <textarea rows="10" cols="80" id="points" name="points"></textarea><br/> 
         <button onclick="setPoints(nflight_logo_points)">NFlight Logo</button>
         <button onclick="setPoints(penguin_points)">Penguin</button>
         <button onclick="setPoints(chicken_points)">Chicken</button>
         <br/><br/>
         
+        <h3>Route</h3>
+        <p>When you are ready, click Generate.</p>
         <button onclick="generate()">Generate</button><br/>
         <label for="route">Route:</label><br/>
         <textarea rows="40" cols="80" id="route" name="route"></textarea><br/>
+        <p>Copy and paste the above route into your flight planning software</p>
 
     </body>
 </html>

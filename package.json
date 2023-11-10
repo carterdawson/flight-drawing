@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "bump": "npm version patch",
-    "test": "mocha -r ts-node/register test/**/*.ts",
+    "test": "set TS_NODE_COMPILER_OPTIONS={\"module\":\"commonjs\"} && mocha -r ts-node/register test/**/*.ts",
     "compile": "tsc"
   },
   "keywords": [],

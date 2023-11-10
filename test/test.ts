@@ -1,6 +1,5 @@
 import { assert, expect } from 'chai';
-import { describe } from 'node:test';
-import { FlightDrawing, Waypoint } from '../'
+import {FlightDrawing, Waypoint} from '../index'
 
 describe("flight-drawing", function() {
     describe("Basic functionality", function() {
@@ -9,7 +8,7 @@ describe("flight-drawing", function() {
                 '1,0|2,0|3,0|4,1|5,0|6,0|7,0'
             );
 
-            const str_expected = "\
+            const str_expected_fixed_lon_scale = "\
 32.910000/-116.500000\n\
 32.910000/-116.499611\n\
 32.910000/-116.499222\n\
@@ -17,6 +16,15 @@ describe("flight-drawing", function() {
 32.910000/-116.498444\n\
 32.910000/-116.498056\n\
 32.910000/-116.497667\n\
+"
+            const str_expected = "\
+32.910000/-116.500000\n\
+32.910000/-116.500469\n\
+32.910000/-116.500938\n\
+32.909715/-116.501407\n\
+32.910000/-116.501876\n\
+32.910000/-116.502345\n\
+32.910000/-116.502814\n\
 "
 
             const str_route = drw.getRouteString(new Waypoint(32.91, -116.5));
@@ -27,7 +35,7 @@ describe("flight-drawing", function() {
                 '1,0|2,0|3,0|4,1|5,0|6,0|7,0'
             );
 
-            const str_expected = "\
+            const str_expected_fixed_lon_scale = "\
 33.645000/-115.554000\n\
 33.645000/-115.553611\n\
 33.645000/-115.553222\n\
@@ -35,6 +43,15 @@ describe("flight-drawing", function() {
 33.645000/-115.552444\n\
 33.645000/-115.552056\n\
 33.645000/-115.551667\n\
+"
+            const str_expected = "\
+33.645000/-115.554000\n\
+33.645000/-115.554474\n\
+33.645000/-115.554949\n\
+33.644715/-115.555423\n\
+33.645000/-115.555897\n\
+33.645000/-115.556371\n\
+33.645000/-115.556846\n\
 "
 
             const str_route = drw.getRouteString(new Waypoint(33.645, -115.554));

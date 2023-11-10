@@ -34,8 +34,10 @@ export class FlightDrawing {
         return apt_ret;
     }
     wptFromPt(wpt_origin, pt) {
+        const lon_scale = this.lat_scale * (1 + Math.tan(wpt_origin.lat * (2 * Math.PI / 360)));
+        //self.lat_scale * (1+math.tan(self.wpt_origin[0] * (2*math.pi/360)))
         const lat = wpt_origin.lat + this.lat_scale * (pt.y - this.pt_origin.y);
-        const lon = wpt_origin.lon + this.lon_scale * (pt.x - this.pt_origin.x);
+        const lon = wpt_origin.lon + lon_scale * (pt.x - this.pt_origin.x);
         return new Waypoint(lat, lon);
     }
     getRoute(wpt_origin) {
