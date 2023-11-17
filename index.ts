@@ -50,7 +50,8 @@ export class FlightDrawing {
     }
 
     public wptFromPt(wpt_origin: Waypoint, pt: Point): Waypoint {
-        const lon_scale = this.lat_scale * (1+Math.tan(wpt_origin.lat * (2*Math.PI/360)))
+        //automatically compute the longtitude scale based on our lattitude
+        const lon_scale = -this.lat_scale * (1+Math.tan(wpt_origin.lat * (2*Math.PI/360)))
         //self.lat_scale * (1+math.tan(self.wpt_origin[0] * (2*math.pi/360)))
         const lat = wpt_origin.lat + this.lat_scale * (pt.y - this.pt_origin.y)
         const lon = wpt_origin.lon + lon_scale * (pt.x - this.pt_origin.x)

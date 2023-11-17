@@ -19,15 +19,16 @@ describe("flight-drawing", function() {
 "
             const str_expected = "\
 32.910000/-116.500000\n\
-32.910000/-116.500469\n\
-32.910000/-116.500938\n\
-32.909715/-116.501407\n\
-32.910000/-116.501876\n\
-32.910000/-116.502345\n\
-32.910000/-116.502814\n\
+32.910000/-116.499531\n\
+32.910000/-116.499062\n\
+32.909715/-116.498593\n\
+32.910000/-116.498124\n\
+32.910000/-116.497655\n\
+32.910000/-116.497186\n\
 "
 
             const str_route = drw.getRouteString(new Waypoint(32.91, -116.5));
+            console.log(str_route);
             expect(str_route).to.deep.equal(str_expected, "Route should be as expected");
         });
         it("can handle a simple test drawing, with a different starting point", function() {
@@ -46,15 +47,16 @@ describe("flight-drawing", function() {
 "
             const str_expected = "\
 33.645000/-115.554000\n\
-33.645000/-115.554474\n\
-33.645000/-115.554949\n\
-33.644715/-115.555423\n\
-33.645000/-115.555897\n\
-33.645000/-115.556371\n\
-33.645000/-115.556846\n\
+33.645000/-115.553526\n\
+33.645000/-115.553051\n\
+33.644715/-115.552577\n\
+33.645000/-115.552103\n\
+33.645000/-115.551629\n\
+33.645000/-115.551154\n\
 "
 
             const str_route = drw.getRouteString(new Waypoint(33.645, -115.554));
+            console.log(str_route);
             expect(str_route).to.deep.equal(str_expected, "Route should be as expected");
         });
 
